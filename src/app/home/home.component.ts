@@ -8,14 +8,17 @@ import { NewsService } from './news.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  news : object[];
+  news:object[];
 
   constructor(public newsService: NewsService) { }
 
-  ngOnInit() {this.newsService.getlatestNews().subscribe(value=> {
-      console.log(value);
-    
-  })
+  ngOnInit() {
+    this.loadNews();
+  }
 
- 
+loadNews():void{
+  this.newsService.getlatestNews().subscribe(value=> {
+    this.news = value;
+    console.log(this.news);
+}, err=>console.log(err))
 }}
