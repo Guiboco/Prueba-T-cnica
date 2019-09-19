@@ -1,12 +1,10 @@
-<div class="news">
-    <div class="new" *ngFor='let new of news'>
+
+<div class="post">
+    <div class="details">
       <div class="rightSection">
-        <h2 class="title">{{new.title.rendered}}</h2>
-  
+          <p> {{new.title.rendered}}</p>
         <p class="date">{{new.date | date: 'dd/MM/yyyy HH:mm'}}</p>
-  
-        <p class="description">{{new.embedded}}</p>
-  
+        <!-- <p>{{new.content.rendered}}</p> -->
       </div>
     </div>
   </div>

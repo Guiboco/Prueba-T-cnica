@@ -9,13 +9,18 @@ import { NewsService } from '../news.service';
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent implements OnInit {
-  new : object[];
+  new : object;
+  content: object;
   constructor(private route: ActivatedRoute,private newsServices: NewsService) { }
 
   ngOnInit() {this.route.params.subscribe(params => {
     this.newsServices.getNewById(params.id).subscribe(value =>{ 
-    this.new = value; 
-    console.log(this.new);})
+    this.new = value;
+    this.content = value.content;
+    console.log(this.new);
+    console.log(this.content);
+    
+ })
   })}
 
 }

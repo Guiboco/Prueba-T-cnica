@@ -13,7 +13,7 @@ export class NewsService {
   getlatestNews(): Observable<any> {
     return this.http.get(`https://www.circuitricardotormo.com/wp-json/wp/v2/posts?page=1&per_page=15&_embed`);
   }
-  getNewById(id):any{
+  getNewById(id:number):any{
     return this.http.get(`https://www.circuitricardotormo.com/wp-json/wp/v2/posts/${id}?_embedbed?`);
   }
 }
