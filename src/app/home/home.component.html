@@ -1,6 +1,6 @@
 
 <div class="news">
-  <div class="new" *ngFor='let new of news'>
+  <div class="new"  [routerLink]='["/new",new.id]' *ngFor='let new of news'>
     <div class="rightSection">
       <h2 class="title">{{new.title.rendered}}</h2>
 
