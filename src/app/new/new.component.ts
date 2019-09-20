@@ -18,7 +18,6 @@ export class NewComponent implements OnInit {
     this.new = value;
     this.content = value.content.rendered;
     console.log(this.new);
-    console.log(this.content);
     
  })
   })}
