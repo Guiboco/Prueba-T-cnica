@@ -8,7 +8,9 @@ import { NewsService } from '../news.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  news:object[];
+  news: object[];
+  new: object;
+  embedded: object[];
 
   constructor(public newsService: NewsService) { }
 
@@ -16,9 +18,17 @@ export class HomeComponent implements OnInit {
     this.loadNews();
   }
 
-loadNews():void{
-  this.newsService.getlatestNews().subscribe(value=> {
-    this.news = value;
-    console.log(this.news);
-}, err=>console.log(err))
-}}
+  loadNews(): void {
+    try {
+      this.newsService.getlatestNews().subscribe(value => {
+        this.news = value;
+        console.log(this.news);
+                  
+        })
+      }
+    catch (error) {
+        err => console.log(err)
+
+      }
+}
+}
