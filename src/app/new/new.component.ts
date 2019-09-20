@@ -16,7 +16,7 @@ export class NewComponent implements OnInit {
   ngOnInit() {this.route.params.subscribe(params => {
     this.newsServices.getNewById(params.id).subscribe(value =>{ 
     this.new = value;
-    this.content = value.content;
+    this.content = value.content.rendered;
     console.log(this.new);
     console.log(this.content);
     

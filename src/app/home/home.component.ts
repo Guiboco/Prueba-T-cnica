@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
       this.newsService.getlatestNews().subscribe(value => {
         this.news = value;
         console.log(this.news);
-                  
         })
       }
     catch (error) {
