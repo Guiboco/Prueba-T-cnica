@@ -10,10 +10,12 @@
 </head>
 
 <body>
+  <div class="news">
+    <div class="title"> News</div>
     <ul class="list-group"  [routerLink]='["/new",new.id]' *ngFor='let new of news'>
         <li class="list-group-item">{{new.title.rendered}} <br> {{new.date | date: 'dd/MM/yyyy HH:mm'}}</li>
       </ul>
-  
+    </div>
 </body>
 
 </html>

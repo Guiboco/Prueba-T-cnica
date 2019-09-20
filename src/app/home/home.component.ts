@@ -9,7 +9,7 @@ import { NewsService } from '../news.service';
 })
 export class HomeComponent implements OnInit {
   news: object[];
-  new: object;
+  new: any;
   embedded: object[];
 
   constructor(public newsService: NewsService) { }
@@ -23,8 +23,7 @@ export class HomeComponent implements OnInit {
       this.newsService.getlatestNews().subscribe(value => {
         this.news = value;
         console.log(this.news);
-        })
-      }
+      })}
     catch (error) {
         err => console.log(err)
 
