@@ -10,8 +10,7 @@ import { NewsService } from '../news.service';
 export class HomeComponent implements OnInit {
   news: object[];
   new: any;
-  embedded: object[];
-
+  file: any;
   constructor(public newsService: NewsService) { }
 
   ngOnInit() {
@@ -22,7 +21,11 @@ export class HomeComponent implements OnInit {
     try {
       this.newsService.getlatestNews().subscribe(value => {
         this.news = value;
-        console.log(this.news);
+        this.new = this.news[0]['_embedded']['wp:featuredmedia'][0]['media_details']['file'];
+        console.log(this.new);
+        console.log(this.news[0]['_embedded']['wp:featuredmedia'][0]['media_details']['file']);
+        
+        
       })}
     catch (error) {
         err => console.log(err)
