@@ -5,20 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
+
   <title>Document</title>
 </head>
 
 <body>
-    <div class="news">
-        <div class="title"> News</div>
-        <ul class="list-group" [routerLink]='["/new",new.id]' *ngFor='let new of news'>
-          <li class="list-group-item">{{new.title.rendered}} <br> {{new.date | date: 'dd/MM/yyyy HH:mm'}}</li>
-          <div class="featuredMedia" *ngFor="let featuredmedia of new['_embedded']['wp:featuredmedia']">
-            <img src="https://www.circuitricardotormo.com/wp-content/uploads/2019/09/{{featuredmedia['media_details']?.sizes?.thumbnail?.file}}" alt="">
-          </div>
-        </ul>
-      </div>
+  <div class="news">
+    <div class="title"> News</div>
+    <ul class="list-group" [routerLink]='["/new",new.id]' *ngFor='let new of news'>
+      <li class="list-group-item">{{new.title.rendered}} <br> {{new.date | date: 'dd/MM/yyyy HH:mm'}}
+        <div class="featuredMedia" *ngFor="let featuredmedia of new['_embedded']['wp:featuredmedia']">
+          <img
+            src="https://www.circuitricardotormo.com/wp-content/uploads/2019/{{featuredmedia?.date?.slice(5,7)}}/{{featuredmedia['media_details']?.sizes?.thumbnail?.file}}"
+            alt="">
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+
 </body>
 
 </html>
